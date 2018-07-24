@@ -1,0 +1,174 @@
+.clear-element {
+	clear: both;
+}
+body{
+	font-size:20px;
+}
+.title{
+	text-align:center;
+}
+.form-group{
+	margin:5%;
+	text-align:center;
+}
+table{
+    height:90%;
+    width:100%;
+	margin-bottom:10%;
+}
+.col-sm-6{
+	text-align:left;
+}
+
+.btn-lg{
+	width:20%;
+}
+.font-day{
+    height:auto;
+    width:14%;
+	text-align:left;
+	Vertical-align:top;
+	font-size:20px;
+	color:#333333;
+}
+.font-day a{
+	text-align:left;
+	font-size:20px;
+	color:#333333;
+	text-decoration:underline;
+}
+
+.sun{
+    height:auto;
+    width:14%;
+	background-color: rgba(238,169,169,0.5);
+	text-align:left;
+	Vertical-align:top;
+	font-size:20px;
+	color:rgba(255, 0, 0);
+}
+.sun a{
+	text-align:left;
+	font-size:20px;
+	color:#333333;
+	text-decoration:underline;
+}
+
+.youbi-sun{
+	background-color: rgba(238,169,169,0.5);
+}
+.sat{
+    height:auto;
+    width:14%;
+	background-color: rgba(165,222,228,0.5);
+	text-align:left;
+	Vertical-align:top;
+	font-size:20px;
+	color:rgba(0, 0, 255);
+}
+.sat a{
+	text-align:left;
+	font-size:20px;
+	color:#333333;
+	text-decoration:underline;
+}
+
+.youbi-sat{
+    height:auto;
+    width:14%;
+	background-color: rgba(165,222,228,0.5);
+}
+
+.today{
+    height:auto;
+    width:14%;
+	background-color: rgba(134,193,102,0.5);
+	text-align:left;
+	Vertical-align:top;
+	font-size:20px;
+	color:rgba(0, 128, 0);
+}
+
+.honzitu{
+	text-align:left;
+}
+.siteibi{
+	text-align:center;
+}
+.select{
+	margin:10px;
+}
+#raigetu{
+	opacity: 0.55;
+}
+.raigetuyotei a{
+	font-size:20px;
+	opacity: 0.75;
+}
+
+#raigetu a{
+	color:#333333;
+	opacity: 0.55;
+}
+
+#sengetu{
+	font-size:20px;
+	opacity: 0.55;
+}
+.sengetuyotei a{
+	font-size:20px;
+	opacity: 0.75;
+}
+
+#sengetu a{
+	color:#333333;
+	opacity: 0.55;
+}
+
+.yotei{
+    height:auto;
+    width:auto;
+}
+.aiu{
+    height:auto;
+    width:100%;
+	margin-bottom:5%;
+}
+.calyoteitr{
+	font-size:20px;
+
+	margin-bottom:5px;
+}
+
+
+.tdyear{
+	padding:0;
+	height:auto;
+	width: 0%;
+
+}
+.ymd{
+	text-align:center;
+	width:32%;
+	display:inline-block;
+}
+.hm{
+	text-align:center;
+	width:49%;
+	display:inline-block;
+}
+
+.form-horizontal .form-group{
+	margin-right:0px;
+	margin-left:0px;
+	text-align:center;
+}
+.form-control{
+	font-size:20px;
+}
+.frm-required{
+	color:rgba(255, 0, 0);
+	font-size:14px;
+	display:inline-block;
+}
+}
