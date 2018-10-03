@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "hash": "25c6407e8f457bf0c6e6cc4480ff4a33",
@@ -142,12 +142,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fuel/core.git",
-                "reference": "e8c221af4cb685aefef20cc50a70f369eb37cb95"
+                "reference": "f614b30e1f76389580c2d97991ab3f25c1533a29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fuel/core/zipball/e8c221af4cb685aefef20cc50a70f369eb37cb95",
-                "reference": "e8c221af4cb685aefef20cc50a70f369eb37cb95",
+                "url": "https://api.github.com/repos/fuel/core/zipball/f614b30e1f76389580c2d97991ab3f25c1533a29",
+                "reference": "f614b30e1f76389580c2d97991ab3f25c1533a29",
                 "shasum": ""
             },
             "require": {
@@ -169,7 +169,7 @@
                 "source": "https://github.com/fuel/core/tree/1.7/master",
                 "issues": "https://github.com/fuel/core/issues"
             },
-            "time": "2015-05-20 14:40:13"
+            "time": "2015-06-23 06:38:57"
         },
         {
             "name": "fuel/docs",
@@ -177,12 +177,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fuel/docs.git",
-                "reference": "f292960d25182c6b42bae1dbc39038782b6dfe39"
+                "reference": "473174da2cf503c60d4a9935b71acfc31f0906d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fuel/docs/zipball/f292960d25182c6b42bae1dbc39038782b6dfe39",
-                "reference": "f292960d25182c6b42bae1dbc39038782b6dfe39",
+                "url": "https://api.github.com/repos/fuel/docs/zipball/473174da2cf503c60d4a9935b71acfc31f0906d0",
+                "reference": "473174da2cf503c60d4a9935b71acfc31f0906d0",
                 "shasum": ""
             },
             "require": {
@@ -204,7 +204,7 @@
                 "source": "https://github.com/fuel/docs/tree/1.7/master",
                 "issues": "https://github.com/fuel/docs/issues"
             },
-            "time": "2015-05-20 13:01:44"
+            "time": "2015-05-23 17:33:30"
         },
         {
             "name": "fuel/email",
@@ -282,12 +282,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fuel/orm.git",
-                "reference": "aecf2b614632c23f178a95799a40d095d571891a"
+                "reference": "5e05c3068562548657fea69850a23b23f65a5545"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fuel/orm/zipball/aecf2b614632c23f178a95799a40d095d571891a",
-                "reference": "aecf2b614632c23f178a95799a40d095d571891a",
+                "url": "https://api.github.com/repos/fuel/orm/zipball/5e05c3068562548657fea69850a23b23f65a5545",
+                "reference": "5e05c3068562548657fea69850a23b23f65a5545",
                 "shasum": ""
             },
             "require": {
@@ -309,7 +309,7 @@
                 "source": "https://github.com/fuel/orm/tree/1.7/master",
                 "issues": "https://github.com/fuel/orm/issues"
             },
-            "time": "2015-05-20 15:07:39"
+            "time": "2015-05-24 09:48:42"
         },
         {
             "name": "fuel/parser",
