@@ -1,5 +1,40 @@
+.menu-btn{
+	border: 1px solid #90B44B;
+	border-radius: 4px;
+	width: 40px;
+	height: 40px;
+	background: url(../img/hamburger.png) no-repeat center center;
+	background-size: contain;
+	background-color: #00AA90;
+	margin: 10px,10px,10px,10px;
+	float:right;
+}
+.nav {
+	display: none;
+	list-style-type: none;
+	width:400px;
+}
+.nav a {
+	margin: 0px 5px;
+	display: block;
+	text-decoration: none;
+}
+.nav a:hover {
+	background: #45BF55;
+}
+
+h2{
+	margin-top:0px;
+}
+td{
+	font-size:20px;
+	padding:0px;
+}
 .clear-element {
 	clear: both;
+}
+.youbi{
+	height:120px;
 }
 body{
 	font-size:20px;
@@ -11,20 +46,20 @@ body{
 	margin:5%;
 	text-align:center;
 }
-table{
-    height:90%;
-    width:100%;
-	margin-bottom:10%;
-}
 .col-sm-6{
 	text-align:left;
 }
-
 .btn-lg{
 	width:20%;
 }
+.danger{
+	margin-left:10%;
+}
+.edit{
+	margin-left:10px;
+}
 .font-day{
-    height:auto;
+    height:120px;
     width:14%;
 	text-align:left;
 	Vertical-align:top;
@@ -35,9 +70,13 @@ table{
 	text-align:left;
 	font-size:20px;
 	color:#333333;
+}
+.font-day a:hover {
+	text-align:left;
+	font-size:20px;
+	color:#333333;
 	text-decoration:underline;
 }
-
 .sun{
     height:auto;
     width:14%;
@@ -48,6 +87,11 @@ table{
 	color:rgba(255, 0, 0);
 }
 .sun a{
+	text-align:left;
+	font-size:20px;
+	color:#333333;
+}
+.sun a:hover {
 	text-align:left;
 	font-size:20px;
 	color:#333333;
@@ -70,6 +114,11 @@ table{
 	text-align:left;
 	font-size:20px;
 	color:#333333;
+}
+.sat a:hover {
+	text-align:left;
+	font-size:20px;
+	color:#333333;
 	text-decoration:underline;
 }
 
@@ -88,6 +137,11 @@ table{
 	font-size:20px;
 	color:rgba(0, 128, 0);
 }
+.today a{
+	text-align:left;
+	font-size:20px;
+	color:#333333;
+}
 
 .honzitu{
 	text-align:left;
@@ -95,6 +149,15 @@ table{
 .siteibi{
 	text-align:center;
 }
+.siteibi2{
+	text-align:center;
+	margin-right:10px;
+}
+.siteibi3{
+	text-align:center;
+	margin-left:10px;
+}
+
 .select{
 	margin:10px;
 }
@@ -103,7 +166,7 @@ table{
 }
 .raigetuyotei a{
 	font-size:20px;
-	opacity: 0.75;
+	opacity: 0.55;
 }
 
 #raigetu a{
@@ -136,10 +199,8 @@ table{
 }
 .calyoteitr{
 	font-size:20px;
-
 	margin-bottom:5px;
 }
-
 
 .tdyear{
 	padding:0;
@@ -170,5 +231,132 @@ table{
 	color:rgba(255, 0, 0);
 	font-size:14px;
 	display:inline-block;
+}
+#scroll_to_top {
+	cursor: pointer;
+	position: fixed;
+	right: 20px;
+	bottom: 10px;
+}
+.topbt {
+	padding: 0 15px;
+	font-size: 15px;
+	display: inline-block;
+	border: 1px solid #999;
+	border-radius: 1em;
+}
+.form-groupuser{
+	display:none;
+}
+.page-top {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	padding: 11px;
+	background: #1fbba6;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	font-size: 12px;
+	-ms-filter: "alpha(opacity=80)";
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+	color:#ffffff;
+	text-decoration:none;
+}
+@media screen and (max-width: 770px) {
+	.col-sm-6 {
+		text-align: center;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.menu-btn{
+		display: none;
+	}
+	.nav {
+		display: flex !important;
+	}
+	.nav li {
+		flex: 1 1 auto;
+		text-align: center;
+	}
+}
+
+@media screen and (min-width: 851px){
+	.syoitiran{display:none;}
+	table{
+	    height:120px;
+	    width:100%;
+		margin-bottom:10%;
+	}
+	td{font-size:20px;
+		padding:0px;}
+}
+
+@media screen and (max-width: 818px){
+	.font-day a{font-size:18px;}
+	.font-day a:hover {
+		text-align:left;
+		font-size:18px;
+		color:#333333;
+		text-decoration:underline;
+	}
+	.today a{font-size:18px;}
+	.today a:hover {
+		text-align:left;
+		font-size:18px;
+		color:#333333;
+		text-decoration:underline;
+	}
+	.sat a{font-size:18px;}
+	.sat a:hover {
+		text-align:left;
+		font-size:18px;
+		color:#333333;
+		text-decoration:underline;
+	}
+	.sun a{font-size:18px;}
+	.sun a:hover {
+		text-align:left;
+		font-size:18px;
+		color:#333333;
+		text-decoration:underline;
+	}
+	table{
+	    height:120px;
+	    width:100%;
+	}
+	.col-md-6{margin-top:0px;}
+	td{font-size:20px;
+		padding:0px;}
+}
+@media screen and (max-width: 750px){
+	.calendar{display:none;}
+	.col-md-6{margin-top:0px;}
+	td{font-size:20px;}
+	.time{display:none;}
+	.hour{display:none;}
+	td{font-size:20px;
+		padding:0px;}
+}
+@media screen and (max-width: 850px){
+	.itiran{display:none;}
+	table{
+	    height:120px;
+	    width:100%;
+	}
+	td{font-size:20px;
+		padding:0px;}
+
+}
+@media screen and (max-width: 1580px){
+	.col-md-6{
+		width:100%;
+	    height:auto;
+	}
+	td{font-size:20px;
+		padding:0px;}
 }
 }

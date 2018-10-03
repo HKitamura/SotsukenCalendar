@@ -1,7 +1,7 @@
 ﻿<?php
 use Orm\Model;
 
-class Model_Calendar4 extends Model
+class Model_Calendar7 extends Model
 {
 	protected static $_properties = array(
 		'id',
@@ -9,9 +9,11 @@ class Model_Calendar4 extends Model
 		'year',
 		'month',
 		'day',
-		'time',
+		'hour',
+		'minute',
 		'title',
 		'text',
+		'user',
 		'created_at',
 		'updated_at',
 	);
@@ -31,12 +33,14 @@ class Model_Calendar4 extends Model
 	{
 		$val = Validation::forge($factory);
 		$val->add_field('name', '名前', 'required|max_length[255]');
-		$val->add_field('year', '年', 'required|max_length[255]');
-		$val->add_field('month', '月', 'required|max_length[255]');
-		$val->add_field('day', '日', 'required|max_length[255]');
-		$val->add_field('time', '時間', 'required|max_length[255]');
+		$val->add_field('year', '年', 'required|valid_string[numeric]');
+		$val->add_field('month', '月', 'required|valid_string[numeric]');
+		$val->add_field('day', '日', 'required|valid_string[numeric]');
+		$val->add_field('hour', '時間(時)', 'required|valid_string[numeric]');
+		$val->add_field('minute', '時間(分)', 'required|valid_string[numeric]');
 		$val->add_field('title', 'タイトル', 'required|max_length[255]');
 		$val->add_field('text', '内容', 'required');
+		$val->add_field('user', 'ユーザー', 'required|valid_string[numeric]');
 
 		return $val;
 	}

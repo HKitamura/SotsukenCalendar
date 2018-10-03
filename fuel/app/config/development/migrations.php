@@ -15,6 +15,7 @@ return array(
         6 => '007_create_calendar4s',
         7 => '008_create_calendar5s',
         8 => '009_create_calendar6s',
+        9 => '010_create_calendar7s',
       ),
     ),
     'module' => 

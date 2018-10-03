@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8N">
 	<title><?php echo $title; ?></title>
 	<?php echo Asset::css('bootstrap.css'); ?>
 	<?php echo Asset::js('main.js'); ?>
@@ -9,14 +8,25 @@
 	<style>
 		body { margin: 10px; }
 	</style>
+	<script type="text/javascript">
+		$(function(){
+			$('#mobile-menu').on('click', function(){
+				$('.navbar-nav').slideToggle()
+			});
+		});
+	</script>
 
 </head>
 <body>
+<?php
+	$flg = 0;
+?>
 		<div class="col-md-12">
 			<h1><?php echo $title; ?></h1>
+				<button class="menu-btn" id="mobile-menu"></button>
 				<ul class="nav navbar-nav">
-					<li><a href="/calendar6">ホーム</a></li>
-					<li><a href="/calendar6/create">予定登録</a></li>
+					<li><a href="/calendar7">ホーム</a></li>
+					<li><a href="/calendar7/create?nen&tuki&day">予定登録</a></li>
 					<li><a href="/logout">ログアウト</a></li>
 				</ul>
 				<div class="clear-element"></div>
@@ -42,5 +52,6 @@
 		</div>
 		<footer>
 		</footer>
+
 </body>
 </html>

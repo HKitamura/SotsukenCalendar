@@ -4,7 +4,7 @@ class Controller_Login extends Controller
     public function action_index()
     {
         //すでにログイン済であればログイン後のページへリダイレクト
-        Auth::check() and Response::redirect('calendar6');
+        Auth::check() and Response::redirect('calendar7');
         //エラーメッセージ用変数初期化
         $error = null;
         //ログイン用のオブジェクト生成
@@ -13,7 +13,7 @@ class Controller_Login extends Controller
         if (Input::post()) {
             if ($auth->login(Input::post('username'), Input::post('password'))) {
                 // ログイン成功時、ログイン後のページへリダイレクト
-                Response::redirect('/calendar6');
+                Response::redirect('/calendar7');
             }
 			else{
                 // ログイン失敗時、エラーメッセージ作成

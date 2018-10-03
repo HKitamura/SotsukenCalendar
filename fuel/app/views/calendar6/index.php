@@ -16,6 +16,7 @@
 		}
 		$dd = 1;
 	?>
+
 		<div class="col-md-6">
 				<!-- テーブルの作成 -->
 				<TABLE BORDER>
@@ -68,7 +69,10 @@
 	</body>
 	</html>
 <div class="col-md-6">
+
+
 	<?php
+
 	function calendar($year, $month) {
 		$data['calendar6s'] = Model_calendar6::find('all', array(
 												    'order_by' => array('Day' => 'asc',
@@ -122,14 +126,14 @@
 			} 
 	 		for($i=0;$i<$wtop;$i++,$sengetulast++){
 				if($i==0){
-					echo "<td class='sun'><div id='sengetu'><a href='/calendar6/create'>$sengetu/$sengetulast</a></div>";	
+					echo "<td class='sun'><div id='sengetu'><a href='/calendar6/create?nen=$year&tuki=$sengetu&day=$sengetulast'>$sengetu/$sengetulast</a></div>";	
 					foreach ($data['calendar6s'] as $item){
 						if($item->year == $year){		
 							if($item->month == $sengetu){	
 								if($item->day == $sengetulast){	
 									echo "<div class='sengetuyotei'>";
 									echo Html::anchor('calendar6/view/'.$item->id, Str::truncate($item->title,5,'', true) );
-									echo"</div><br>";
+									echo"</div>";
 								}
 							}
 						}
@@ -139,14 +143,14 @@
 					echo"</td>";
 				}
 				elseif($i==7){
-					echo "<td class='sat'><div id='sengetu'><a href='/calendar6/create'>$sengetulast</a></div>";
+					echo "<td class='sat'><div id='sengetu'><a href='/calendar6/create?nen=$year&tuki=$sengetu&day=$sengetulast'>$sengetulast</a></div>";
 					foreach ($data['calendar6s'] as $item){
 						if($item->year == $year){		
 							if($item->month == $sengetu){	
 								if($item->day == $sengetulast){	
 									echo "<div class='sengetuyotei'>";
 									echo Html::anchor('calendar6/view/'.$item->id, Str::truncate($item->title,5,'', true) );
-									echo"</div><br>";
+									echo"</div>";
 								}
 							}
 						}
@@ -154,14 +158,14 @@
 					echo"</div></td>";
 				}
 				else{
-					echo "<td class='font-day'><div id='sengetu'><a href='/calendar6/create'>$sengetulast</a></div>";
+					echo "<td class='font-day'><div id='sengetu'><a href='/calendar6/create?nen=$year&tuki=$sengetu&day=$sengetulast'>$sengetulast</a></div>";
 					foreach ($data['calendar6s'] as $item){
 						if($item->year == $year){		
 							if($item->month == $sengetu){	
 								if($item->day == $sengetulast){	
 									echo "<div class='sengetuyotei'>";
 									echo Html::anchor('calendar6/view/'.$item->id, Str::truncate($item->title,5,'', true) );
-									echo"</div><br>";
+									echo"</div>";
 								}
 							}
 						}
@@ -186,9 +190,17 @@
 			if($i == 1){
 				if($i == $today){
 					if($month==$nowmonth){
-						echo "<td class='today'><font color=\"green\">$month/$i";
-					echo"<br>";
-					foreach ($data['calendar6s'] as $item){
+						if($w == 0){
+							echo "<td class='sun'><font color=\"red\"><a href='/calendar6/create?nen=$year&tuki=$month&day=$i'>$month/$i";
+						}
+						if($w == 6){
+							echo "<td class='sat'><font color=\"blue\"><a href='/calendar6/create?nen=$year&tuki=$month&day=$i'>$month/$i";
+						}
+						else{
+							echo "<td class='today'><font color=\"green\"><a href='/calendar6/create?nen=$year&tuki=$month&day=$i'>$month/$i";
+						}
+						echo"<br>";
+						foreach ($data['calendar6s'] as $item){
 						if($item->year == $year){		
 							if($item->month == $month){	
 								if($item->day == $i){	
@@ -205,7 +217,15 @@
 					echo"</td>";
 					}
 					else{
-						echo "<td class='font-day'>$month/$i";
+						if($w == 0){
+							echo "<td class='sun'><font color=\"red\"><a href='/calendar6/create?nen=$year&tuki=$month&day=$i'>$month/$i";
+						}
+						else if($w == 6){
+							echo "<td class='sat'><font color=\"blue\"><a href='/calendar6/create?nen=$year&tuki=$month&day=$i'>$month/$i";
+						}
+						else if($w != 0 || $w != 6 || $i == 1){
+							echo "<td class='font-day'><font color=\"blue\"><a href='/calendar6/create?nen=$year&tuki=$month&day=$i'>$month/$i";
+						}
 					echo"<br>";
 					foreach ($data['calendar6s'] as $item){
 						if($item->year == $year){		
@@ -226,7 +246,7 @@
 				}
 				else if($w == 0){//日曜
 					echo "</tr><tr>";//改行
-					echo "<td class='sun'><font color=\"red\">$month/$i";
+					echo "<td class='sun'><font color=\"red\"><a href='/calendar6/create?nen=$year&tuki=$month&day=$i'>$month/$i";
 					echo"<br>";
 					foreach ($data['calendar6s'] as $item){
 						if($item->year == $year){		
@@ -245,7 +265,7 @@
 					echo"</td>";
 				
 				}else if($w == 6){//土曜
-					echo "<td class='sat'><font color=\"blue\">$month/$i";
+					echo "<td class='sat'><font color=\"blue\"><a href='/calendar6/create?nen=$year&tuki=$month&day=$i'>$month/$i";
 					echo"<br>";
 					foreach ($data['calendar6s'] as $item){
 						if($item->year == $year){		
@@ -263,7 +283,7 @@
 					}	
 					echo"</td>";
 				}else{//平日
-					echo"<td class='font-day'>$month/$i";
+					echo"<td class='font-day'><a href='/calendar6/create?nen=$year&tuki=$month&day=$i'>$month/$i";
 					echo"<br>";
 					foreach ($data['calendar6s'] as $item){
 						if($item->year == $year){		
@@ -289,7 +309,7 @@
 				if($i == $today){	
 					if($month==$nowmonth){
 						if($year==$nowyear){
-							echo "<td class='today'><font color=\"green\">$i";
+							echo "<td class='today'><font color=\"green\"><a href='/calendar6/create?nen=$year&tuki=$month&day=$i'>$i";
 							echo"<br>";
 							foreach ($data['calendar6s'] as $item){
 								if($item->year == $year){		
@@ -311,7 +331,7 @@
 						else{
 							if($w == 0){//日曜
 								echo "</tr><tr>";//改行
-								echo "<td class='sun'><font color=\"red\">$i";
+								echo "<td class='sun'><font color=\"red\"><a href='/calendar6/create?nen=$year&tuki=$month&day=$i'>$i";
 								echo"<br>";
 								foreach ($data['calendar6s'] as $item){
 									if($item->year == $year){		
@@ -330,7 +350,7 @@
 								}	
 								echo"</td>";
 							}else if($w == 6){//土曜
-								echo "<td class='sat'><font color=\"blue\">$i";
+								echo "<td class='sat'><font color=\"blue\"><a href='/calendar6/create?nen=$year&tuki=$month&day=$i'>$i";
 								echo"<br>";
 								foreach ($data['calendar6s'] as $item){
 									if($item->year == $year){		
@@ -349,7 +369,7 @@
 								}	
 								echo"</td>";
 							}else{//平日
-								echo"<td class='font-day'>$i";
+								echo"<td class='font-day'><a href='/calendar6/create?nen=$year&tuki=$month&day=$i'>$i";
 							echo"<br>";
 							foreach ($data['calendar6s'] as $item){
 								if($item->year == $year){		
@@ -373,7 +393,7 @@
 					else{
 						if($w == 0){//日曜
 							echo "</tr><tr>";//改行
-							echo "<td class='sun'><font color=\"red\">$i</td>";
+							echo "<td class='sun'><font color=\"red\"><a href='/calendar6/create?nen=$year&tuki=$month&day=$i'>$i</td>";
 							echo"<br>";
 							foreach ($data['calendar6s'] as $item){
 								if($item->year == $year){		
@@ -392,7 +412,7 @@
 							}	
 							echo"</td>";
 						}else if($w == 6){//土曜
-							echo "<td class='sat'><font color=\"blue\">$i</td>";
+							echo "<td class='sat'><font color=\"blue\"><a href='/calendar6/create?nen=$year&tuki=$month&day=$i'>$i</td>";
 							foreach ($data['calendar6s'] as $item){
 								if($item->year == $year){		
 									if($item->month == $month){	
@@ -410,7 +430,7 @@
 							}	
 							echo"</td>";
 						}else{//平日
-							echo"<td class='font-day'>$i";
+							echo"<td class='font-day'><a href='/calendar6/create?nen=$year&tuki=$month&day=$i'>$i";
 					echo"<br>";
 					foreach ($data['calendar6s'] as $item){
 						if($item->year == $year){		
@@ -433,7 +453,7 @@
 				}
 				else if($w == 0){//日曜
 					echo "</tr><tr>";//改行
-					echo "<td class='sun'><font color=\"red\">$i";
+					echo "<td class='sun'><font color=\"red\"><a href='/calendar6/create?nen=$year&tuki=$month&day=$i'>$i";
 					echo"<br>";
 					foreach ($data['calendar6s'] as $item){
 						if($item->year == $year){		
@@ -452,7 +472,7 @@
 					}	
 					echo"</td>";
 				}else if($w == 6){//土曜
-					echo "<td class='sat'><font color=\"blue\">$i";
+					echo "<td class='sat'><font color=\"blue\"><a href='/calendar6/create?nen=$year&tuki=$month&day=$i'>$i";
 					echo"<br>";
 					foreach ($data['calendar6s'] as $item){
 						if($item->year == $year){		
@@ -471,7 +491,7 @@
 					}	
 					echo"</td>";
 				}else{//平日
-					echo"<td class='font-day'>$i";
+					echo"<td class='font-day'><a href='/calendar6/create?nen=$year&tuki=$month&day=$i'>$i";
 					echo"<br>";
 					foreach ($data['calendar6s'] as $item){
 						if($item->year == $year){		
@@ -508,7 +528,7 @@
 			}
 			if($x == 1){
 				if($i==-1){
-					echo "<td class='sun'><div id='raigetu'>$month/$x</div>";
+					echo "<td class='sun'><div id='raigetu'><a href='/calendar6/create?nen=$year&tuki=$month&day=$x'>$month/$x</div>";
 					foreach ($data['calendar6s'] as $item){
 						if($item->year == $year){		
 							if($item->month == $month){	
@@ -529,7 +549,7 @@
 					
 				}
 				elseif($i==6){
-					echo "<td class='sat'><div id='raigetu'>$month/$x</div>";
+					echo "<td class='sat'><div id='raigetu'><a href='/calendar6/create?nen=$year&tuki=$month&day=$x'>$month/$x</div>";
 					foreach ($data['calendar6s'] as $item){
 						if($item->year == $year){		
 							if($item->month == $month){	
@@ -549,7 +569,7 @@
 					$x++;
 				}
 				else{
-					echo "<td class='font-day'><div id='raigetu'>$month/$x</div>";
+					echo "<td class='font-day'><div id='raigetu'><a href='/calendar6/create?nen=$year&tuki=$month&day=$x'>$month/$x</div>";
 					foreach ($data['calendar6s'] as $item){
 						if($item->year == $year){		
 							if($item->month == $month){	
@@ -571,7 +591,7 @@
 			}
 			else{
 				if($i==-1){
-					echo "<td class='sun'>$x</div>";
+					echo "<td class='sun'><a href='/calendar6/create?nen=$year&tuki=$month&day=$x'>$x</div>";
 					foreach ($data['calendar6s'] as $item){
 						if($item->year == $year){		
 							if($item->month == $month){	
@@ -592,7 +612,7 @@
 					
 				}
 				elseif($i==6){
-					echo "<td class='sat'><div id='raigetu'>$x</div>";
+					echo "<td class='sat'><div id='raigetu'><a href='/calendar6/create?nen=$year&tuki=$month&day=$x'>$x</div>";
 					foreach ($data['calendar6s'] as $item){
 						if($item->year == $year){		
 							if($item->month == $month){	
@@ -612,7 +632,7 @@
 					$x++;
 				}
 				else{
-					echo "<td class='font-day'><div id='raigetu'>$x</div>";
+					echo "<td class='font-day'><div id='raigetu'><a href='/calendar6/create?nen=$year&tuki=$month&day=$x'>$x</div>";
 					foreach ($data['calendar6s'] as $item){
 						if($item->year == $year){		
 							if($item->month == $month){	
@@ -636,7 +656,7 @@
 		}
 	}
 	echo "<div class='itiran'>";
-	echo "<h3>予定一覧</span></h3>";
+	echo "<h2>予定一覧</span></h2>";
 	if ($calendar6s){
 		echo"<table class='table-striped aiu' id='calyotei'>";
 			echo"<thead>";
@@ -655,14 +675,27 @@
 						if($item->month == $month){		
 							echo"<tr class='calyoteitr'>";
 								echo"<td class='calyoteitd'>$item->name</td>";
-								echo"<td class='tdyear'>$item->year/";
-								echo"$item->month/";
-								echo"$item->day</td>";
+								echo"<td class='tdyear'>$item->year /";
+								if($item->month < 10 ){
+									echo"0$item->month /";
+								}
+								elseif($item->month > 9 ){
+									echo"$item->month /";
+								}
+								if($item->day < 10 ){
+									echo"0$item->day</td>";
+								}
+								elseif($item->day > 9 ){
+									echo"$item->day</td>";
+								}
 								echo"<td class='hour'>$item->hour : ";
-								if($item->minute != 0){
+								if($item->minute < 10 ){
+									echo"0$item->minute";echo" ～";echo"</td>";
+								}
+								elseif($item->minute != 0){
 									echo"$item->minute ～</td>";
 								}
-								if($item->minute == 0){
+								elseif($item->minute == 0){
 									echo"$item->minute";echo"0 ～";echo"</td>";
 								}
 								echo"<td class='calyoteitd'>";echo Str::truncate($item->title,10,'', true); echo"</td>";
@@ -686,5 +719,8 @@
 		echo "<p>予定はありません</p>";
 	}
 echo "</div>";
-
+echo "<div id='scroll_to_top'>";
+	echo "<button class='topbt' onclick='top1()'>ページ最上部へ</button>";
+echo "</div>";
+echo Arr::get(Auth::get_user_id(),1);
 ?>

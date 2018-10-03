@@ -23,14 +23,14 @@
 
 	<div class="form-group">
 		<label for="form_name" class="col-sm-6 control-label">ユーザー名</label>
-	<div class="col-sm-6">
-		<?php echo Form::input('username');?>
-	</div>
+		<div class="col-sm-6 formuser">
+			<?php echo Form::input('username');?>
+		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="form_name" class="col-sm-6 control-label">パスワード</label>
-		<div class="col-sm-6">
+		<div class="col-sm-6 form-user">
 			<?php echo Form::password('password');?>
 		</div>
 	</div>
