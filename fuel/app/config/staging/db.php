@@ -10,6 +10,5 @@ return array(
 			'username'   => 'bb9f1d2cd164df',
 			'password'   => '9a8948e6',
 		),
-
 	),
 );
