@@ -198,7 +198,7 @@ class Controller_calendar7 extends Controller_Template
 						}
 					}
 					else
-					{
+					{z
 						Session::set_flash('error', '年は 2000 ～ 2050 年の間で入力してください');
 					}
 				}
