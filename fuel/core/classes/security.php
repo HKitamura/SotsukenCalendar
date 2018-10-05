@@ -227,7 +227,7 @@ class Security
 		is_null($double_encode) and $double_encode = \Config::get('security.htmlentities_double_encode', false);
 
 		// Nothing to escape for non-string scalars, or for already processed values
-		if ($value === null or is_bool($value) or is_int($value) or is_float($value) or in_array($value, $already_cleaned, true))
+		if (get_class($value) === null or is_bool($value) or is_int($value) or is_float($value) or in_array($value, $already_cleaned, true))
 		{
 			return $value;
 		}
