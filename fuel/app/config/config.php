@@ -152,7 +152,7 @@ return array(
 		 * WARNING: Using xss_clean will cause a performance hit.
 		 * How much is dependant on how much input data there is.
 		 */
-		'output_filter'  => array('Security::htmlentities'),
+		'output_filter'  => array('Security::htmlentities',1),
 
 		/**
 		 * Encoding mechanism to use on htmlentities()
